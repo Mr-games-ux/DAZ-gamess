@@ -2,69 +2,456 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAZ Games</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DAZ Games</title>
+
+<style>
+
+/* CONFIGURACION GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080d18;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: #101827;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #087cff;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #087cff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #168bff;
+}
+
+/* CONTENIDO */
+
+main {
+    width: 84%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* BIENVENIDA */
+
+.welcome {
+    text-align: center;
+    padding: 85px 15px;
+    background: linear-gradient(135deg, #101d35, #080d18);
+    margin: 35px 0;
+    border-radius: 15px;
+    border: 1px solid #163c6e;
+}
+
+.welcome h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    color: #a9b8cc;
+}
+
+/* BUSCADOR */
+
+.game-search {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.game-search input,
+.game-search select {
+    background: #111c2d;
+    color: white;
+    border: 1px solid #087cff;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.game-search input {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-search select {
+    max-width: 230px;
+}
+
+/* JUEGOS */
+
+section {
+    margin-bottom: 55px;
+}
+
+section h2 {
+    margin-bottom: 25px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: #111c2d;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #1b3556;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: #087cff;
+    box-shadow: 0 0 18px #087cff33;
+}
+
+.game-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    color: #7f9bbd;
+    margin-top: 10px;
+}
+
+.empty-message {
+    display: none;
+    color: #a9b8cc;
+    padding: 20px 0;
+}
+
+/* ACERCA DE */
+
+#about p {
+    color: #a9b8cc;
+    line-height: 1.7;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #101827;
+    border-top: 1px solid #087cff;
+    color: #8ba0bb;
+}
+
+/* MOVILES */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .game-search {
+        flex-direction: column;
+    }
+
+    .game-search select {
+        max-width: none;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>DAZ <span>GAMES</span></h1>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#games">Juegos</a>
-            <a href="#about">Acerca de</a>
-        </nav>
-    </header>
+<!-- ENCABEZADO -->
 
-    <main>
-        <section class="welcome">
-            <h2>Bienvenido a DAZ Games</h2>
-            <p>Tu próximo juego está aquí.</p>
-        </section>
+<header>
 
-        <section id="games">
-            <h2>🎮 Juegos disponibles</h2>
-            <div class="game-grid">
+    <div class="logo">
+        DAZ <span>GAMES</span>
+    </div>
 
-                <article class="game-card">
-                    <div class="game-icon">🚗</div>
-                    <h3>Racing</h3>
-                    <p>Próximamente</p>
-                </article>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#games">Juegos</a>
+        <a href="#about">Acerca de</a>
+    </nav>
 
-                <article class="game-card">
-                    <div class="game-icon">⚔️</div>
-                    <h3>Action</h3>
-                    <p>Próximamente</p>
-                </article>
+</header>
 
-                <article class="game-card">
-                    <div class="game-icon">🧩</div>
-                    <h3>Puzzle</h3>
-                    <p>Próximamente</p>
-                </article>
+<main>
 
-                <article class="game-card">
-                    <div class="game-icon">🏃</div>
-                    <h3>Arcade</h3>
-                    <p>Próximamente</p>
-                </article>
+    <!-- BIENVENIDA -->
 
-            </div>
-        </section>
+    <section class="welcome">
 
-        <section id="about">
-            <h2>Acerca de DAZ Games</h2>
-            <p>Un portal de juegos creado para disfrutar
-            de diferentes experiencias desde el navegador.</p>
-        </section>
-    </main>
+        <h2>Bienvenido a DAZ Games</h2>
 
-    <footer>
-        <p>DAZ Games © 2026</p>
-    </footer>
+        <p>
+            Tu próximo juego está aquí.
+            Descubre nuevas experiencias.
+        </p>
+
+    </section>
+
+    <!-- JUEGOS -->
+
+    <section id="games">
+
+        <h2>🎮 Juegos disponibles</h2>
+
+        <!-- BUSCADOR -->
+
+        <div class="game-search">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar juegos..."
+            >
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    Todas las categorías
+                </option>
+
+                <option value="racing">
+                    Carreras
+                </option>
+
+                <option value="action">
+                    Acción
+                </option>
+
+                <option value="puzzle">
+                    Puzzle
+                </option>
+
+                <option value="arcade">
+                    Arcade
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- TARJETAS -->
+
+        <div class="game-grid" id="gameGrid">
+
+            <article
+                class="game-card"
+                data-name="Racing"
+                data-category="racing">
+
+                <div class="game-icon">🚗</div>
+
+                <h3>Racing</h3>
+
+                <p>Próximamente</p>
+
+            </article>
+
+            <article
+                class="game-card"
+                data-name="Action"
+                data-category="action">
+
+                <div class="game-icon">⚔️</div>
+
+                <h3>Action</h3>
+
+                <p>Próximamente</p>
+
+            </article>
+
+            <article
+                class="game-card"
+                data-name="Puzzle"
+                data-category="puzzle">
+
+                <div class="game-icon">🧩</div>
+
+                <h3>Puzzle</h3>
+
+                <p>Próximamente</p>
+
+            </article>
+
+            <article
+                class="game-card"
+                data-name="Arcade"
+                data-category="arcade">
+
+                <div class="game-icon">🏃</div>
+
+                <h3>Arcade</h3>
+
+                <p>Próximamente</p>
+
+            </article>
+
+        </div>
+
+        <p class="empty-message" id="emptyMessage">
+            No se encontraron juegos.
+        </p>
+
+    </section>
+
+    <!-- ACERCA DE -->
+
+    <section id="about">
+
+        <h2>Acerca de DAZ Games</h2>
+
+        <p>
+            DAZ Games es un portal de juegos web
+            creado para disfrutar de diferentes
+            experiencias directamente desde
+            el navegador.
+        </p>
+
+    </section>
+
+</main>
+
+<!-- PIE DE PAGINA -->
+
+<footer>
+
+    <p>DAZ Games © 2026</p>
+
+    <p>Created by DAZ</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const categoryFilter =
+    document.getElementById("categoryFilter");
+
+const gameCards =
+    document.querySelectorAll(".game-card");
+
+const emptyMessage =
+    document.getElementById("emptyMessage");
+
+function filterGames() {
+
+    const search =
+        searchInput.value.toLowerCase();
+
+    const category =
+        categoryFilter.value;
+
+    let visibleGames = 0;
+
+    gameCards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        const gameCategory =
+            card.dataset.category;
+
+        const matchesName =
+            name.includes(search);
+
+        const matchesCategory =
+            category === "all" ||
+            category === gameCategory;
+
+        if (matchesName && matchesCategory) {
+
+            card.style.display = "block";
+            visibleGames++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    emptyMessage.style.display =
+        visibleGames === 0 ? "block" : "none";
+
+}
+
+searchInput.addEventListener(
+    "input",
+    filterGames
+);
+
+categoryFilter.addEventListener(
+    "change",
+    filterGames
+);
+
+</script>
 
 </body>
 </html>
