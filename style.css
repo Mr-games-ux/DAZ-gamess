@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080d18;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #101827;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #087cff;
+}
+
+header h1 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+header h1 span {
+    color: #087cff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #168bff;
+}
+
+main {
+    width: 84%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.welcome {
+    text-align: center;
+    padding: 85px 15px;
+    background: linear-gradient(135deg, #101d35, #080d18);
+    margin: 35px 0;
+    border-radius: 15px;
+    border: 1px solid #163c6e;
+}
+
+.welcome h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    color: #a9b8cc;
+}
+
+section {
+    margin-bottom: 55px;
+}
+
+section h2 {
+    margin-bottom: 25px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: #111c2d;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #1b3556;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: #087cff;
+    box-shadow: 0 0 18px #087cff33;
+}
+
+.game-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    color: #7f9bbd;
+    margin-top: 10px;
+}
+
+#about p {
+    color: #a9b8cc;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #101827;
+    border-top: 1px solid #087cff;
+    color: #8ba0bb;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+
+    main {
+        width: 92%;
+    }
+}
