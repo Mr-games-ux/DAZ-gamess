@@ -4,454 +4,769 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DAZ Games</title>
+<title>DAZ Games V2</title>
 
 <style>
-
-/* CONFIGURACION GENERAL */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #080d18;
-    color: white;
-    font-family: Arial, sans-serif;
+  background: #080d18;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
-/* ENCABEZADO */
-
 header {
-    background: #101827;
-    padding: 22px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #087cff;
+  background: #101827;
+  border-bottom: 2px solid #087cff;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 2px;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .logo span {
-    color: #087cff;
+  color: #168bff;
 }
 
-nav {
-    display: flex;
-    gap: 22px;
+header nav {
+  display: flex;
+  gap: 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+header a {
+  color: white;
+  text-decoration: none;
 }
 
-nav a:hover {
-    color: #168bff;
+header a:hover {
+  color: #168bff;
 }
-
-/* CONTENIDO */
 
 main {
-    width: 84%;
-    max-width: 1200px;
-    margin: auto;
+  max-width: 1100px;
+  width: 90%;
+  margin: auto;
 }
 
-/* BIENVENIDA */
-
-.welcome {
-    text-align: center;
-    padding: 85px 15px;
-    background: linear-gradient(135deg, #101d35, #080d18);
-    margin: 35px 0;
-    border-radius: 15px;
-    border: 1px solid #163c6e;
+.hero {
+  margin: 35px 0;
+  padding: 55px 20px;
+  text-align: center;
+  background: linear-gradient(135deg,#10284b,#080d18);
+  border: 1px solid #087cff;
+  border-radius: 14px;
 }
 
-.welcome h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
+.hero h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
 }
 
-.welcome p {
-    color: #a9b8cc;
+.hero p {
+  color: #a9b8cc;
 }
 
-/* BUSCADOR */
-
-.game-search {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 25px;
+.catalog h2 {
+  margin-bottom: 20px;
 }
 
-.game-search input,
-.game-search select {
-    background: #111c2d;
-    color: white;
-    border: 1px solid #087cff;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 15px;
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
-.game-search input {
-    flex: 1;
-    min-width: 0;
+input, select {
+  background: #111c2d;
+  color: white;
+  border: 1px solid #087cff;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
-.game-search select {
-    max-width: 230px;
+input {
+  flex: 1;
+  min-width: 0;
 }
 
-/* JUEGOS */
-
-section {
-    margin-bottom: 55px;
+select {
+  max-width: 210px;
 }
 
-section h2 {
-    margin-bottom: 25px;
-}
-
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
+.game-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .game-card {
-    background: #111c2d;
-    padding: 25px;
-    text-align: center;
-    border-radius: 12px;
-    border: 1px solid #1b3556;
-    transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #111c2d;
+  border: 1px solid #1b3556;
+  border-radius: 11px;
+  padding: 15px;
+  transition: .2s;
 }
 
 .game-card:hover {
-    transform: translateY(-6px);
-    border-color: #087cff;
-    box-shadow: 0 0 18px #087cff33;
+  border-color: #168bff;
+  transform: translateX(4px);
+  box-shadow: 0 0 15px #087cff33;
 }
 
 .game-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #162d4b;
+  border-radius: 10px;
+  font-size: 34px;
 }
 
-.game-card p {
-    color: #7f9bbd;
-    margin-top: 10px;
+.game-info {
+  flex: 1;
 }
 
-.empty-message {
-    display: none;
-    color: #a9b8cc;
-    padding: 20px 0;
+.game-info h3 {
+  margin-bottom: 7px;
 }
 
-/* ACERCA DE */
-
-#about p {
-    color: #a9b8cc;
-    line-height: 1.7;
+.game-info p {
+  color: #91a7c2;
+  font-size: 13px;
 }
 
-/* PIE DE PAGINA */
+.tag {
+  display: inline-block;
+  color: #62aaff;
+  font-size: 11px;
+  margin-top: 7px;
+}
+
+.play-button {
+  background: #087cff;
+  color: white;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.play-button:hover {
+  background: #2994ff;
+}
+
+#empty {
+  display: none;
+  color: #91a7c2;
+  padding: 25px 0;
+}
+
+.player {
+  display: none;
+  margin: 30px 0;
+  padding: 20px;
+  background: #101827;
+  border: 1px solid #087cff;
+  border-radius: 12px;
+}
+
+.player h2 {
+  margin-bottom: 15px;
+}
+
+.player canvas {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  background: #050b15;
+  border: 1px solid #24476d;
+  border-radius: 8px;
+  margin: auto;
+  touch-action: manipulation;
+}
+
+.player-controls {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.close-button {
+  margin-top: 15px;
+  background: #26364d;
+  color: white;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
 footer {
-    text-align: center;
-    padding: 25px;
-    background: #101827;
-    border-top: 1px solid #087cff;
-    color: #8ba0bb;
+  margin-top: 55px;
+  padding: 25px;
+  text-align: center;
+  color: #8096b2;
+  background: #101827;
+  border-top: 1px solid #087cff;
 }
 
-/* MOVILES */
+@media(max-width:600px) {
+  header {
+    justify-content: center;
+  }
 
-@media (max-width: 600px) {
+  header nav {
+    gap: 13px;
+  }
 
-    header {
-        flex-direction: column;
-        gap: 18px;
-    }
+  .hero h2 {
+    font-size: 26px;
+  }
 
-    nav {
-        gap: 15px;
-    }
+  .controls {
+    flex-direction: column;
+  }
 
-    .welcome h2 {
-        font-size: 27px;
-    }
+  select {
+    max-width: none;
+  }
 
-    main {
-        width: 92%;
-    }
+  .game-card {
+    gap: 10px;
+  }
 
-    .game-search {
-        flex-direction: column;
-    }
+  .game-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
 
-    .game-search select {
-        max-width: none;
-    }
-
+  .play-button {
+    padding: 10px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ENCABEZADO -->
-
 <header>
+  <div class="logo">DAZ <span>GAMES</span></div>
 
-    <div class="logo">
-        DAZ <span>GAMES</span>
-    </div>
-
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#games">Juegos</a>
-        <a href="#about">Acerca de</a>
-    </nav>
-
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#catalog">Juegos</a>
+  </nav>
 </header>
 
 <main>
 
-    <!-- BIENVENIDA -->
+<section class="hero">
+  <h2>DAZ Games V2</h2>
+  <p>Tu biblioteca de juegos en un solo lugar.</p>
+</section>
 
-    <section class="welcome">
+<section class="catalog" id="catalog">
+  <h2>🎮 Biblioteca de juegos</h2>
 
-        <h2>Bienvenido a DAZ Games</h2>
+  <div class="controls">
+    <input id="search" placeholder="Buscar juegos...">
 
-        <p>
-            Tu próximo juego está aquí.
-            Descubre nuevas experiencias.
-        </p>
+    <select id="filter">
+      <option value="all">Todas las categorías</option>
+      <option value="arcade">Arcade</option>
+      <option value="racing">Carreras</option>
+      <option value="puzzle">Puzzle</option>
+      <option value="action">Acción</option>
+      <option value="strategy">Estrategia</option>
+    </select>
+  </div>
 
-    </section>
+  <div class="game-list" id="gameList"></div>
+  <p id="empty">No se encontraron juegos.</p>
+</section>
 
-    <!-- JUEGOS -->
+<section class="player" id="player">
+  <h2 id="playerTitle">Juego</h2>
 
-    <section id="games">
+  <canvas id="gameCanvas" width="600" height="350"></canvas>
 
-        <h2>🎮 Juegos disponibles</h2>
-
-        <!-- BUSCADOR -->
-
-        <div class="game-search">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Buscar juegos..."
-            >
-
-            <select id="categoryFilter">
-
-                <option value="all">
-                    Todas las categorías
-                </option>
-
-                <option value="racing">
-                    Carreras
-                </option>
-
-                <option value="action">
-                    Acción
-                </option>
-
-                <option value="puzzle">
-                    Puzzle
-                </option>
-
-                <option value="arcade">
-                    Arcade
-                </option>
-
-            </select>
-
-        </div>
-
-        <!-- TARJETAS -->
-
-        <div class="game-grid" id="gameGrid">
-
-            <article
-                class="game-card"
-                data-name="Racing"
-                data-category="racing">
-
-                <div class="game-icon">🚗</div>
-
-                <h3>Racing</h3>
-
-                <p>Próximamente</p>
-
-            </article>
-
-            <article
-                class="game-card"
-                data-name="Action"
-                data-category="action">
-
-                <div class="game-icon">⚔️</div>
-
-                <h3>Action</h3>
-
-                <p>Próximamente</p>
-
-            </article>
-
-            <article
-                class="game-card"
-                data-name="Puzzle"
-                data-category="puzzle">
-
-                <div class="game-icon">🧩</div>
-
-                <h3>Puzzle</h3>
-
-                <p>Próximamente</p>
-
-            </article>
-
-            <article
-                class="game-card"
-                data-name="Arcade"
-                data-category="arcade">
-
-                <div class="game-icon">🏃</div>
-
-                <h3>Arcade</h3>
-
-                <p>Próximamente</p>
-
-            </article>
-
-        </div>
-
-        <p class="empty-message" id="emptyMessage">
-            No se encontraron juegos.
-        </p>
-
-    </section>
-
-    <!-- ACERCA DE -->
-
-    <section id="about">
-
-        <h2>Acerca de DAZ Games</h2>
-
-        <p>
-            DAZ Games es un portal de juegos web
-            creado para disfrutar de diferentes
-            experiencias directamente desde
-            el navegador.
-        </p>
-
-    </section>
+  <div class="player-controls">
+    <p id="instructions">Controles del juego</p>
+    <button class="close-button" onclick="closeGame()">
+      Volver al catálogo
+    </button>
+  </div>
+</section>
 
 </main>
 
-<!-- PIE DE PAGINA -->
-
 <footer>
-
-    <p>DAZ Games © 2026</p>
-
-    <p>Created by DAZ</p>
-
+  DAZ Games © 2026 | Created by DAZ
 </footer>
-
-<!-- JAVASCRIPT -->
 
 <script>
 
-const searchInput =
-    document.getElementById("searchInput");
+/* CATALOGO DE 20 JUEGOS */
 
-const categoryFilter =
-    document.getElementById("categoryFilter");
+const games = [
+  ["Neon Snake","arcade","🐍","Come puntos y consigue récords.","snake"],
+  ["Pixel Runner","arcade","🏃","Corre y esquiva obstáculos.","runner"],
+  ["Space Defender","action","🚀","Defiende tu nave espacial.","space"],
+  ["Brick Breaker","arcade","🧱","Rompe todos los bloques.","brick"],
+  ["Memory Cards","puzzle","🃏","Encuentra las parejas.","memory"],
 
-const gameCards =
-    document.querySelectorAll(".game-card");
+  ["Speed Racer","racing","🏎️","Esquiva el tráfico.","coming"],
+  ["Drift Challenge","racing","🏁","Domina las curvas.","coming"],
+  ["Mini Rally","racing","🚗","Compite en pistas pequeñas.","coming"],
+  ["Turbo Track","racing","🏆","Supera tus tiempos.","coming"],
 
-const emptyMessage =
-    document.getElementById("emptyMessage");
+  ["Number Puzzle","puzzle","🔢","Resuelve desafíos numéricos.","coming"],
+  ["Color Match","puzzle","🎨","Combina colores.","coming"],
+  ["Block Puzzle","puzzle","🧩","Organiza las piezas.","coming"],
 
-function filterGames() {
+  ["Alien Attack","action","👾","Defiende la galaxia.","coming"],
+  ["Ninja Jump","action","🥷","Salta entre plataformas.","coming"],
+  ["Target Master","action","🎯","Pon a prueba tu precisión.","coming"],
 
-    const search =
-        searchInput.value.toLowerCase();
+  ["Chess Mini","strategy","♟️","Un desafío de ajedrez.","coming"],
+  ["Tower Defense","strategy","🏰","Protege tu territorio.","coming"],
+  ["Tactical Grid","strategy","🗺️","Planea tus movimientos.","coming"]
+];
 
-    const category =
-        categoryFilter.value;
+const list = document.getElementById("gameList");
 
-    let visibleGames = 0;
+function renderGames() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const category = document.getElementById("filter").value;
 
-    gameCards.forEach(card => {
+  list.innerHTML = "";
 
-        const name =
-            card.dataset.name.toLowerCase();
+  let count = 0;
 
-        const gameCategory =
-            card.dataset.category;
+  games.forEach((game, index) => {
+    const [name, cat, icon, description, type] = game;
 
-        const matchesName =
-            name.includes(search);
+    if (!name.toLowerCase().includes(search)) return;
+    if (category !== "all" && category !== cat) return;
 
-        const matchesCategory =
-            category === "all" ||
-            category === gameCategory;
+    count++;
 
-        if (matchesName && matchesCategory) {
+    const card = document.createElement("article");
+    card.className = "game-card";
 
-            card.style.display = "block";
-            visibleGames++;
+    const image = document.createElement("div");
+    image.className = "game-icon";
+    image.textContent = icon;
 
-        } else {
+    const info = document.createElement("div");
+    info.className = "game-info";
 
-            card.style.display = "none";
+    const title = document.createElement("h3");
+    title.textContent = name;
 
-        }
+    const desc = document.createElement("p");
+    desc.textContent = description;
 
-    });
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = cat.toUpperCase();
 
-    emptyMessage.style.display =
-        visibleGames === 0 ? "block" : "none";
+    info.append(title, desc, tag);
 
+    const button = document.createElement("button");
+    button.className = "play-button";
+    button.textContent = type === "coming" ? "PRONTO" : "JUGAR";
+    button.disabled = type === "coming";
+    button.style.opacity = type === "coming" ? ".55" : "1";
+
+    if (type !== "coming") {
+      button.addEventListener("click", () => openGame(type, name));
+    }
+
+    card.append(image, info, button);
+    list.appendChild(card);
+  });
+
+  document.getElementById("empty").style.display =
+    count === 0 ? "block" : "none";
 }
 
-searchInput.addEventListener(
-    "input",
-    filterGames
-);
+document.getElementById("search").addEventListener("input", renderGames);
+document.getElementById("filter").addEventListener("change", renderGames);
 
-categoryFilter.addEventListener(
-    "change",
-    filterGames
-);
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+let animation;
+let activeGame = "";
+let state = {};
+
+function stopGame() {
+  if (animation) cancelAnimationFrame(animation);
+  animation = null;
+}
+
+function openGame(type, name) {
+  stopGame();
+
+  activeGame = type;
+  state = {score: 0};
+
+  document.getElementById("player").style.display = "block";
+  document.getElementById("playerTitle").textContent = name;
+
+  document.getElementById("instructions").textContent =
+    "Usa las flechas del teclado o los controles táctiles.";
+
+  canvas.style.display = "block";
+
+  document.getElementById("player").scrollIntoView({behavior:"smooth"});
+
+  if (type === "snake") startSnake();
+  if (type === "runner") startRunner();
+  if (type === "space") startSpace();
+  if (type === "brick") startBrick();
+  if (type === "memory") startMemory();
+}
+
+function closeGame() {
+  stopGame();
+  document.getElementById("player").style.display = "none";
+  renderGames();
+}
+
+function clear() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+/* NEON SNAKE */
+
+function startSnake() {
+  const size = 20;
+  let snake = [{x: 10, y: 8}];
+  let food = {x: 15, y: 8};
+  let dx = 1, dy = 0;
+  let ticks = 0;
+
+  function turn(key) {
+    if (key === "ArrowUp" && dy !== 1) {dx=0;dy=-1;}
+    if (key === "ArrowDown" && dy !== -1) {dx=0;dy=1;}
+    if (key === "ArrowLeft" && dx !== 1) {dx=-1;dy=0;}
+    if (key === "ArrowRight" && dx !== -1) {dx=1;dy=0;}
+  }
+
+  state.key = turn;
+
+  state.interval = setInterval(() => {
+    if (activeGame !== "snake") return;
+
+    ticks++;
+    const head = {x:snake[0].x+dx,y:snake[0].y+dy};
+
+    if (head.x < 0 || head.x >= 30 || head.y < 0 || head.y >= 17 ||
+        snake.some(p => p.x === head.x && p.y === head.y)) {
+      snake = [{x:10,y:8}];
+      dx=1;dy=0;
+      state.score=0;
+      food={x:15,y:8};
+    } else {
+      snake.unshift(head);
+
+      if (head.x === food.x && head.y === food.y) {
+        state.score++;
+        food = {x:Math.floor(Math.random()*30),y:Math.floor(Math.random()*17)};
+      } else {
+        snake.pop();
+      }
+    }
+
+    clear();
+    ctx.fillStyle="#168bff";
+    ctx.fillRect(food.x*20,food.y*20,18,18);
+    ctx.fillStyle="#4ddcff";
+    snake.forEach(p => ctx.fillRect(p.x*20,p.y*20,18,18));
+    ctx.fillStyle="white";
+    ctx.font="16px Arial";
+    ctx.fillText("Puntos: "+state.score,10,20);
+  },130);
+}
+
+/* PIXEL RUNNER */
+
+function startRunner() {
+  let player = 280;
+  let obstacle = 600;
+  let jumping = false;
+  let jump = 0;
+
+  state.key = key => {
+    if (key === " " && !jumping) {
+      jumping = true;
+      jump = 90;
+    }
+  };
+
+  function frame() {
+    if (activeGame !== "runner") return;
+
+    clear();
+
+    if (jumping) {
+      jump -= 5;
+      if (jump <= 0) jumping = false;
+    }
+
+    obstacle -= 6;
+    if (obstacle < 0) {
+      obstacle = 600;
+      state.score++;
+    }
+
+    ctx.fillStyle="#168bff";
+    ctx.fillRect(player,250-jump,30,30);
+
+    ctx.fillStyle="#ff4b68";
+    ctx.fillRect(obstacle,270,25,30);
+
+    ctx.fillStyle="white";
+    ctx.font="18px Arial";
+    ctx.fillText("Puntos: "+state.score,15,25);
+
+    if (obstacle < player+30 && obstacle+25 > player &&
+        250-jump+30 > 270) {
+      ctx.fillText("¡Choque! Pulsa JUGAR otra vez.",150,160);
+      return;
+    }
+
+    animation=requestAnimationFrame(frame);
+  }
+
+  frame();
+}
+
+/* SPACE DEFENDER */
+
+function startSpace() {
+  let ship = 280;
+  let bullets = [];
+  let enemies = [];
+  let keys = {};
+
+  state.key = key => {keys[key]=true;};
+  state.release = key => {keys[key]=false;};
+
+  state.shoot = () => bullets.push({x:ship+12,y:290});
+
+  function frame() {
+    if (activeGame !== "space") return;
+
+    clear();
+
+    if (keys.ArrowLeft) ship-=5;
+    if (keys.ArrowRight) ship+=5;
+    ship=Math.max(0,Math.min(570,ship));
+
+    if (Math.random()<0.025) enemies.push({x:Math.random()*570,y:0});
+
+    bullets.forEach(b=>b.y-=7);
+    enemies.forEach(e=>e.y+=2);
+
+    bullets=bullets.filter(b=>b.y>0);
+    enemies=enemies.filter(e=>e.y<350);
+
+    bullets.forEach(b=>{
+      enemies.forEach(e=>{
+        if(Math.abs(b.x-e.x)<20 && Math.abs(b.y-e.y)<20) {
+          e.y=400;
+          b.y=-20;
+          state.score++;
+        }
+      });
+    });
+
+    ctx.fillStyle="#168bff";
+    ctx.fillRect(ship,300,30,30);
+
+    ctx.fillStyle="#ffffff";
+    bullets.forEach(b=>ctx.fillRect(b.x,b.y,5,12));
+
+    ctx.fillStyle="#ff4566";
+    enemies.forEach(e=>ctx.fillRect(e.x,e.y,22,22));
+
+    ctx.fillStyle="white";
+    ctx.font="16px Arial";
+    ctx.fillText("Puntos: "+state.score,10,20);
+
+    animation=requestAnimationFrame(frame);
+  }
+
+  frame();
+}
+
+/* BRICK BREAKER */
+
+function startBrick() {
+  let x=300, y=280, dx=3, dy=-3, paddle=250;
+  let bricks=[];
+
+  for(let r=0;r<4;r++)
+    for(let c=0;c<8;c++)
+      bricks.push({x:15+c*72,y:35+r*25,alive:true});
+
+  state.key = key => {
+    if(key==="ArrowLeft") paddle-=25;
+    if(key==="ArrowRight") paddle+=25;
+    paddle=Math.max(0,Math.min(500,paddle));
+  };
+
+  function frame() {
+    if(activeGame!=="brick") return;
+
+    clear();
+
+    x+=dx;y+=dy;
+
+    if(x<8 || x>592) dx=-dx;
+    if(y<8) dy=-dy;
+
+    if(y>320 && x>paddle && x<paddle+100) dy=-Math.abs(dy);
+    if(y>350) {
+      x=300;y=280;dx=3;dy=-3;
+      state.score=0;
+    }
+
+    bricks.forEach(b=>{
+      if(b.alive) {
+        ctx.fillStyle="#168bff";
+        ctx.fillRect(b.x,b.y,60,15);
+
+        if(x>b.x && x<b.x+60 && y>b.y && y<b.y+15) {
+          b.alive=false;
+          dy=-dy;
+          state.score++;
+        }
+      }
+    });
+
+    ctx.fillStyle="white";
+    ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();
+
+    ctx.fillStyle="#4ddcff";
+    ctx.fillRect(paddle,330,100,10);
+
+    ctx.font="16px Arial";
+    ctx.fillText("Puntos: "+state.score,10,20);
+
+    animation=requestAnimationFrame(frame);
+  }
+
+  frame();
+}
+
+/* MEMORY CARDS */
+
+function startMemory() {
+  const symbols=["🚀","🚀","⭐","⭐","🎮","🎮","👾","👾"];
+  symbols.sort(()=>Math.random()-.5);
+
+  let opened=[];
+  let matched=[];
+  let locked=false;
+
+  canvas.style.display="none";
+
+  const board=document.createElement("div");
+  board.style.display="grid";
+  board.style.gridTemplateColumns="repeat(4,1fr)";
+  board.style.gap="10px";
+  board.style.maxWidth="500px";
+  board.style.margin="20px auto";
+
+  symbols.forEach((symbol,i)=>{
+    const card=document.createElement("button");
+    card.textContent="?";
+    card.style.fontSize="28px";
+    card.style.padding="20px 5px";
+    card.style.background="#162d4b";
+    card.style.color="white";
+    card.style.border="1px solid #087cff";
+    card.style.borderRadius="8px";
+
+    card.onclick=()=>{
+      if(locked || matched.includes(i) || opened.includes(i)) return;
+
+      card.textContent=symbol;
+      opened.push(i);
+
+      if(opened.length===2) {
+        locked=true;
+        const [a,b]=opened;
+
+        if(symbols[a]===symbols[b]) {
+          matched.push(a,b);
+          opened=[];
+          locked=false;
+        } else {
+          setTimeout(()=>{
+            board.children[a].textContent="?";
+            board.children[b].textContent="?";
+            opened=[];
+            locked=false;
+          },700);
+        }
+      }
+
+      if(matched.length===symbols.length) {
+        document.getElementById("instructions").textContent="¡Ganaste! Encontraste todas las parejas.";
+      }
+    };
+
+    board.appendChild(card);
+  });
+
+  document.getElementById("player").insertBefore(
+    board, document.querySelector(".player-controls")
+  );
+
+  state.board=board;
+}
+
+document.addEventListener("keydown",e=>{
+  if(state.key) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"," "].includes(e.key)) e.preventDefault();
+    state.key(e.key);
+  }
+});
+
+document.addEventListener("keyup",e=>{
+  if(state.release) state.release(e.key);
+});
+
+document.addEventListener("keydown",e=>{
+  if(activeGame==="space" && e.code==="Space" && state.shoot) state.shoot();
+});
+
+renderGames();
 
 </script>
-
 </body>
 </html>
